@@ -1,0 +1,19 @@
+$gray: #c2bc96;
+$cream: #d8d6b8;
+$darkblue: #303c61;
+$lightblue: #467097;
+$whiteblue: #e4ebef;
+
+.productlist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.productlist__title {
+  color: $darkblue;
+  font-size: 4rem;
+  margin: 3rem 0rem;
+  text-align: center;
+}
