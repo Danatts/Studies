@@ -15,4 +15,4 @@ apariencia o comportamiento.
 .product-card__image
 ```
 
-![Ejemplo tarjeta](./assets(img04.png)
+![Ejemplo tarjeta](./assets/img04.png)
