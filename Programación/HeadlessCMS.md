@@ -21,35 +21,35 @@ Es más fácil enviar contenido a diferentes tipos de dispositivos.
 
 ## Diferencia entre una API tradicional y una API de CMS
 
-![cmsapi]('./assets/img09.png')
+![cmsapi(./assets/img07.png)
 
-- Control total sobre le contenido que se ingresa, por lo que un usuario puede
-cambiar el contenido sin ningún problema.
-- El proceso de desarrollo del API CMS es más sencillo y más frecuente.
+  - Control total sobre le contenido que se ingresa, por lo que un usuario puede
+  cambiar el contenido sin ningún problema.
+  - El proceso de desarrollo del API CMS es más sencillo y más frecuente.
 
 ## Ventajas de Headless sobre CMS
 
-- Multiples canales de forma nativa.
-- Costos más bajos.
-- Reducir el tiempo de lanzamiento por el trabajo simultaneo entre contenido
-y código.
-- Compatibilidad del contenido.
-- Fácil rediseño.
-- Despliegue fácil.
+  - Multiples canales de forma nativa.
+  - Costos más bajos.
+  - Reducir el tiempo de lanzamiento por el trabajo simultaneo entre contenido
+  y código.
+  - Compatibilidad del contenido.
+  - Fácil rediseño.
+  - Despliegue fácil.
 
 ## Características comunes
 
-- RESTful/GraphQL API.
-- Interfaz del editor.
-- Roles y permisos.
+  - RESTful/GraphQL API.
+  - Interfaz del editor.
+  - Roles y permisos.
 
 ## Tipos de aplicaciones que se pueden crear
 
-- Sitios web estándar.
-- Web apps.
-- Sitios web creados con los generadores de sitios estáticos.
-- Aplicaciones móviles nativas.
+  - Sitios web estándar.
+  - Web apps.
+  - Sitios web creados con los generadores de sitios estáticos.
+  - Aplicaciones móviles nativas.
 
 ## A tener en cuenta
 
-- Modelar datos a cómo el usuario los vería.
+  - Modelar datos a cómo el usuario los vería.

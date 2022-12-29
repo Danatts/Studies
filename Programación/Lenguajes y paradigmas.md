@@ -20,7 +20,7 @@ sistema. Por el contrario, los declarativos se centran en el qué y no en el có
   sin importar las veces que se le llame.
 
   - **Funciones sin estado:** Es aquella que no tienen variables o estados internos que se usen dentro
-    de la función.
+  de la función.
 
 ### Orientado a objetos
 
