@@ -1,6 +1,56 @@
-# Notas Rust
+# Rust Notes
 
 ## Data Types
+
+### Scalar Types
+
+#### Integer Type
+
+| Length | Signed | Unsigned |
+| - | - | - |
+| 8-bit | i8 | u8 |
+| 16-bit | i16 | u16 |
+| 32-bit | i32 | u32 |
+| 64-bit | i64 | u64 |
+| 128-bit | i128 | u128 |
+| arch | isize | usize |
+
+- Defaults types is `i32`.
+
+#### Float Type
+
+```rs
+fn main() {
+    let x = 2.0 // f64
+    let y: f32 = 3.0 // f32
+}
+```
+
+- Defaults type is `f64`.
+
+#### Boolean Type
+
+```rs
+fn main() {
+    let x = true;
+    let y: bool = false
+}
+```
+
+- Defaults type is `true`.
+
+#### Character Type
+
+```rs
+fn main() {
+    let c = 'z';
+    let z: char = 'ℤ'; // with explicit type annotation
+    let heart_eyed_cat = '😻';
+}
+```
+
+- Characters are specified with sinlge quotes.
+- `char` type is four bytes in size.
 
 ### Compound Types
 
@@ -43,5 +93,5 @@ fn main() {
     let secong = arr[1];
 }
 ```
-
+## Functions
 
