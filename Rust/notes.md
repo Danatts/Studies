@@ -21,7 +21,7 @@
 
 ```rs
 fn main() {
-    let x = 2.0 // f64
+  let x = 2.0 // f64
     let y: f32 = 3.0 // f32
 }
 ```
@@ -32,8 +32,8 @@ fn main() {
 
 ```rs
 fn main() {
-    let x = true;
-    let y: bool = false
+  let x = true;
+  let y: bool = false
 }
 ```
 
@@ -43,13 +43,13 @@ fn main() {
 
 ```rs
 fn main() {
-    let c = 'z';
-    let z: char = 'ℤ'; // with explicit type annotation
-    let heart_eyed_cat = '😻';
+  let c = 'z';
+  let z: char = 'ℤ'; // with explicit type annotation
+  let heart_eyed_cat = '😻';
 }
 ```
 
-- Characters are specified with sinlge quotes.
+- Characters are specified with single quotes.
 - `char` type is four bytes in size.
 
 ### Compound Types
@@ -61,17 +61,17 @@ fn main() {
 
 ```rs
 fn main() {
-    let tup: (i32, f64, u8) = (500, 6.4, 1);
+  let tup: (i32, f64, u8) = (500, 6.4, 1);
 
-    // Destructuring a tuple value
-    let (x, y, z) = tup; // x = 500, y = 6.4, z = 1
+  // Destructuring a tuple value
+  let (x, y, z) = tup; // x = 500, y = 6.4, z = 1
 
-    // Accesing a tuple element
-    let five_hundred = tup.0;
+  // Accesing a tuple element
+  let five_hundred = tup.0;
 
-    let six_point_four = tup.1;
+  let six_point_four = tup.1;
 
-    let one = x.2;
+  let one = x.2;
 }
 ```
 
@@ -83,15 +83,81 @@ fn main() {
 
 ```rs
 fn main() {
-    let arr: [i32; 5] = [1, 2, 3, 4, 5];
+  let arr: [i32; 5] = [1, 2, 3, 4, 5];
 
-    // Same value for each element
-    let arr2 = [3u32; 5];
+  // Same value for each element
+  let arr2 = [3u32; 5];
 
-    // Accesing an array element
-    let first = arr[0];
-    let secong = arr[1];
+  // Accesing an array element
+  let first = arr[0];
+  let secong = arr[1];
 }
 ```
 ## Functions
 
+```rs
+fn main () {
+  another_function(5);
+}
+
+fn another_function(x: i32) {
+  println!("The value of x is: {x}");
+}
+```
+
+Function bodies are made up of aseries of statements optionally ending in an expression.
+
+- **Statements** are instructions that perform some action and no not return a value.
+- **Expressions** evaluate to a resultant value. They do not include ending semicolon.
+
+### Functions with Return Values
+
+```rs
+fn five() -> i32 {
+  5
+}
+
+fn main() {
+  let x = five();
+
+  println!("The value of x is: {x}");
+}
+```
+
+You can return early from a function by using the `return` keyword and specifying a value.
+
+## Control Flow
+
+### if Expressions
+
+```rs
+fn main() {
+  let number = 6;
+
+  if number % 4 == 0 {
+    println!("number is divisible by 4");
+  } else if number % 3 == 0 {
+    println!("number is divisible by 3");
+  } else if number % 2 == 0 {
+    println!("number is divisible by 2");
+  } else {
+    println!("number is not divisible by 4, 3, or 2");
+  }
+}
+```
+
+Rust will not automatically try to convert non-Boolean types to a Boolean. You must be explicit and
+always provide `if` with a Boolean as its condition.
+
+### Using if in a let Statement
+
+```rs
+fn main() {
+    let condition = true;
+    let number = if condition { 5 } else { 6 };
+
+    println!("The value of number is: {number}");
+}
+```
+
+The value that have the potential to be results from each arm of the `if` must be the same type.
