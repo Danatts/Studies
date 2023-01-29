@@ -149,15 +149,133 @@ fn main() {
 Rust will not automatically try to convert non-Boolean types to a Boolean. You must be explicit and
 always provide `if` with a Boolean as its condition.
 
-### Using if in a let Statement
+### Using if in a let statement
 
 ```rs
 fn main() {
-    let condition = true;
-    let number = if condition { 5 } else { 6 };
+  let condition = true;
+  let number = if condition { 5 } else { 6 };
 
-    println!("The value of number is: {number}");
+  println!("The value of number is: {number}");
 }
 ```
 
 The value that have the potential to be results from each arm of the `if` must be the same type.
+
+### Repeating code with loop
+
+```rs
+loop {
+  let mut guess = String::new();
+
+  io::stdin()
+    .read_line(&mut guess)
+    .expect("Failed to read line");
+
+  let guess: u32 = match guess.trim().parse() {
+    Ok(num) => num,
+      Err(_) => continue,
+  };
+
+  println!("You guessed: {guess}");
+
+  match guess.cmp(&secret_number) {
+    Ordering::Less => println!("Too small!"),
+      Ordering::Greater => println!("Too big!"),
+      Ordering::Equal => {
+        println!("You win!");
+        break;
+      }
+  }
+}
+```
+### Returning values from loops
+
+To do this, you can add the value you want returned after the `break` expression you use to stop the
+loop. That value will be returned out of the loop so you can use it.
+
+```rs
+fn main() {
+  let mut counter = 0;
+
+  let result = loop {
+    counter += 1;
+
+    if counter == 10 {
+      break counter * 2;
+    }
+  };
+
+  println!("The result is {result}");
+}
+```
+
+### Loop Labels to disambiguate between multiple loops
+
+If you have loops within loops, `break` and `continue` apply to the innermost loop at that point.
+You can optionally specify a *loop label* on a loop that you can then use with `break` or `continue`
+to specify that those keywords apply to the labeledloop instead of the innermost loop.
+
+- Loop labels must begin with a single quote.
+
+```rs
+fn main() {
+  let mut count = 0;
+  'counting_up: loop {
+    println!("count = {count}");
+    let mut remaining = 10;
+
+    loop {
+      println!("remaining = {remaining}");
+      if remaining == 9 {
+        break;
+      }
+      if count == 2 {
+        break 'counting_up;
+      }
+      remaining -= 1;
+    }
+
+    count += 1;
+  }
+  println!("End count = {count}");
+}
+```
+### Conditional loops with while
+
+```
+fn main() {
+  let mut number = 3;
+
+  while number != 0 {
+    println!("{number}!");
+
+    number -= 1;
+  }
+
+  println!("LIFTOFF!!!");
+}
+```
+
+### Looping through a collection with for
+
+```
+fn main() {
+    let a = [10, 20, 30, 40, 50];
+
+    for element in a {
+        println!("the value is: {element}");
+    }
+}
+```
+
+### Looping through a range with for
+
+```rs
+fn main() {
+    for number in (1..4).rev() {
+        println!("{number}!");
+    }
+    println!("LIFTOFF!!!");
+}
+```
