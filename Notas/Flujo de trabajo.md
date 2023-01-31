@@ -45,5 +45,3 @@
   1. Ramas transitorias.
   2. Minimización y simplificación de reversiones.
   3. Cumplimiento de una planificación de publicación.
-
-![MVP](./assets/flujo_trabajo03.png)
