@@ -39,7 +39,7 @@ proxy* actuando como intermediarios.
 - OPTIONS: Describe las opciones de comunicación que tiene disponibles el recurso.
 - TRACE: Realiza un llamado en bucle de testeo con el recurso.
 
-> POST crea un recurso, PUT revisa si existe para reemplazarlo o lo crea si no existe aun y PATCH
+> POST crea un recurso, PUT revisa si existe para reemplazarlo o lo crea si no existe aún y PATCH
 > solo actualiza la información del recurso.
 
 ### Códigos de estado HTTP
