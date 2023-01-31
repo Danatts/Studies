@@ -9,7 +9,7 @@
 7. SPRINT REVIEW: Se hace un repaso del sprint y se presentan los resultados conseguidos.
 8. RETROSPECTIVE: Se evalúa el flujo de trabajo del sprint.
 
-![](./assets/img03.jpeg)
+![](./assets/flujo_trabajo01.jpeg)
 
 ## FLUJOS DE TRABAJO CON GIT
 
@@ -38,7 +38,7 @@
   se envían al repositorio remoto central. De igual forma, de la central se hará el pull al remoto propio para actualizar
   los archivos.
 
-![Ramas de funcionalidades](./assets/img01.png)
+![Ramas de funcionalidades](./assets/flujo_trabajo02.png)
 
 ### DIRECTRICES
 
@@ -46,4 +46,4 @@
   2. Minimización y simplificación de reversiones.
   3. Cumplimiento de una planificación de publicación.
 
-![MVP](./assets/img02.png)
+![MVP](./assets/flujo_trabajo03.png)

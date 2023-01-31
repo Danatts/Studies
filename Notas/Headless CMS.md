@@ -21,7 +21,7 @@ Es más fácil enviar contenido a diferentes tipos de dispositivos.
 
 ## Diferencia entre una API tradicional y una API de CMS
 
-![cmsapi](./assets/img09.png)
+![cmsapi](./assets/headless01.png)
 
   - Control total sobre le contenido que se ingresa, por lo que un usuario puede
   cambiar el contenido sin ningún problema.

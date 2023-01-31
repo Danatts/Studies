@@ -1,6 +1,6 @@
 # DevOps
 
-![CICD](./assets/img07.png)
+![CICD](./assets/cicd01.png)
 
 ## Integración continua (CI)
 
@@ -26,7 +26,7 @@
 
 ## Herramientas de despliegue
 
-![Herramientas](./assets/img08.png)
+![Herramientas](./assets/cicd02.png)
 
 ## Github actions
 
