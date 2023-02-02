@@ -149,7 +149,7 @@ You can return early from a function by using the `return` keyword and specifyin
 
 ## Control Flow
 
-### if Expressions
+### `if` Expressions
 
 ```rs
 fn main() {
@@ -170,7 +170,7 @@ fn main() {
 Rust will not automatically try to convert non-Boolean types to a Boolean. You must be explicit and
 always provide `if` with a Boolean as its condition.
 
-### Using if in a let statement
+### Using `if` in a `let` statement
 
 ```rs
 fn main() {
@@ -183,7 +183,7 @@ fn main() {
 
 The value that have the potential to be results from each arm of the `if` must be the same type.
 
-### Repeating code with loop
+### Repeating code with `loop`
 
 ```rs
 loop {
@@ -262,9 +262,9 @@ fn main() {
   println!("End count = {count}");
 }
 ```
-### Conditional loops with while
+### Conditional loops with `while`
 
-```
+```rs
 fn main() {
   let mut number = 3;
 
@@ -278,9 +278,9 @@ fn main() {
 }
 ```
 
-### Looping through a collection with for
+### Looping through a collection with `for`
 
-```
+```rs
 fn main() {
   let a = [10, 20, 30, 40, 50];
 
@@ -290,7 +290,7 @@ fn main() {
 }
 ```
 
-### Looping through a range with for
+### Looping through a range with `for`
 
 ```rs
 fn main() {
@@ -337,7 +337,7 @@ fn makes_copy(some_integer: i32) { // some_integer comes into scope
 
 Returning values can also transfer ownership.
 
-```
+```rs
 fn main() {
   let s1 = gives_ownership();         // gives_ownership moves its return
                                       // value into s1
