@@ -56,7 +56,7 @@ fn main() {
 
 ```rs
 fn main() {
-  let s = "hello, world";
+  let s: &str = "hello, world";
 }
 ```
 
@@ -384,15 +384,15 @@ particular type for the life of that reference.
 
 ```rs
 fn main() {
-    let s1 = String::from("hello");
+  let s1 = String::from("hello");
 
-    let len = calculate_length(&s1);
+  let len = calculate_length(&s1);
 
-    println!("The length of '{}' is {}.", s1, len);
+  println!("The length of '{}' is {}.", s1, len);
 }
 
 fn calculate_length(s: &String) -> usize {
-    s.len()
+  s.len()
 }
 ```
 
@@ -406,13 +406,13 @@ before.
 
 ```rs
 fn main() {
-    let mut s = String::from("hello");
+  let mut s = String::from("hello");
 
-    change(&mut s);
+  change(&mut s);
 }
 
 fn change(some_string: &mut String) {
-    some_string.push_str(", world");
+  some_string.push_str(", world");
 }
 ```
 
@@ -422,13 +422,13 @@ references.
 
 ```rs
 fn main() {
-    let mut s = String::from("hello");
+  let mut s = String::from("hello");
 
-    {
-        let r1 = &mut s;
-    } // r1 goes out of scope here, so we can make a new reference with no problems.
+  {
+    let r1 = &mut s;
+  } // r1 goes out of scope here, so we can make a new reference with no problems.
 
-    let r2 = &mut s;
+  let r2 = &mut s;
 }
 ```
 
@@ -438,16 +438,58 @@ reference is used. So the next chunk will compile.
 
 ```rs
 fn main() {
-    let mut s = String::from("hello");
+  let mut s = String::from("hello");
 
-    let r1 = &s; // no problem
-    let r2 = &s; // no problem
-    println!("{} and {}", r1, r2);
-    // variables r1 and r2 will not be used after this point
+  let r1 = &s; // no problem
+  let r2 = &s; // no problem
+  println!("{} and {}", r1, r2);
+  // variables r1 and r2 will not be used after this point
 
-    let r3 = &mut s; // no problem
-    println!("{}", r3);
+  let r3 = &mut s; // no problem
+  println!("{}", r3);
 }
 ```
 
 References must always be valid.
+
+### String slices
+
+A *string slice* is a reference to a part of a `String`.
+
+```rs
+fn main() {
+  let s = String::from("hello world");
+
+  let hello = &s[0..5];
+  let world = &s[6..11];
+}
+```
+
+#### String slices as parameters
+
+Require a `&str` as a parameter makes the function more flexible allowing us to use the same
+function both `&String` values and `&str` values. If we have a string slice, we can pass that
+directly. If we have a `String`, we can pass a slice of the `String` or a reference to the `String`.
+
+```rs
+fn main() {
+  let my_string = String::from("hello world");
+
+  // `first_word` works on slices of `String`s, whether partial or whole
+  let word = first_word(&my_string[0..6]);
+  let word = first_word(&my_string[..]);
+  // `first_word` also works on references to `String`s, which are equivalent
+  // to whole slices of `String`s
+  let word = first_word(&my_string);
+
+  let my_string_literal = "hello world";
+
+  // `first_word` works on slices of string literals, whether partial or whole
+  let word = first_word(&my_string_literal[0..6]);
+  let word = first_word(&my_string_literal[..]);
+
+  // Because string literals *are* string slices already,
+  // this works too, without the slice syntax!
+  let word = first_word(my_string_literal);
+}
+```
