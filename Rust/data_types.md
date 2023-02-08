@@ -217,10 +217,57 @@ impl Rectangle {
     }
 }
 
+//Calling the function
 fn main() {
     let sq = Rectangle::square(3);
 }
+```
 
-//Calling the function
-Rectangle::square(3);
+### Enums
+
+*Enums* allow to define a type by enumerating its possible variants, they give a way of saying a
+value is one of a possible set of values.
+
+```rs
+enum IpAddrKind {
+  V4,
+  v6,
+}
+
+let four = IpAddrKind::V4;
+let six = IpAddrKind::V6;
+
+// Attach data to enum variants
+enum IpAddr {
+  V4(u8, u8, u8, u8),
+  V6(String),
+}
+
+let home = IpAddr::V4(127, 0, 0, 1);
+
+let loopback = IpAddr::V6(String::from("::1"));
+```
+
+- Any kind of data can be inside an enum variant.
+
+```rs
+enum Message {
+    Quit, // unit struct
+    Move { x: i32, y: i32 }, // clasic struct
+    Write(String), // tuple struct
+    ChangeColor(i32, i32, i32), // tuple struct
+}
+```
+
+#### Methods
+
+```
+impl Message {
+    fn call(&self) {
+        // method body would be defined here
+    }
+}
+
+let m = Message::Write(String::from("hello"));
+m.call();
 ```
