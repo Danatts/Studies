@@ -187,6 +187,51 @@ fn main() {
 }
 ```
 
+### `match`
+
+```rs
+enum Coin {
+    Penny,
+    Nickel,
+    Dime,
+    Quarter,
+}
+
+fn value_in_cents(coin: Coin) -> u8 {
+    match coin {
+        Coin::Penny => 1,
+        Coin::Nickel => 5,
+        Coin::Dime => 10,
+        Coin::Quarter => 25,
+    }
+}
+```
+
+- Unlike `if`, that the codition needs to evaluate to a Boolean value, here can be any type.
+
+### `if let`
+
+```rs
+fn main() {
+    let config_max = Some(3u8);
+    match config_max {
+        Some(max) => println!("The maximum is configured to be {}", max),
+        _ => (),
+    }
+}
+
+// The code above can be written also like:
+fn main() {
+    let config_max = Some(3u8);
+    if let Some(max) = config_max {
+        println!("The maximum is configured to be {}", max);
+    }
+}
+
+
+```
+
+
 ## Ownership
 
 ***Ownership*** is a set of rules that govern how a Rust program manages memory.
