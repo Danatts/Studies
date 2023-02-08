@@ -201,7 +201,7 @@ fn main() {
 
 #### Associated functions without `self`
 
-```
+```rs
 #[derive(Debug)]
 struct Rectangle {
     width: u32,
