@@ -54,14 +54,6 @@ let s: &str = "hello, world";
 - String literals are specified with double quotes.
 - Slices are references so they do not have ownership.
 
-### String Type
-
-```rs
-let s = String::from("hello, world");
-```
-
-- String type is mutable.
-
 ## Compound Types
 
 ### Tuple Type
@@ -295,3 +287,47 @@ fn main() {
     let none = plus_one(None);
 }
 ```
+
+## Collection Type
+
+Collections can contain multiple values, and the data these collections pointsto is stored on the
+heap, so the amount of data does not need to be known at compile time and can grow or shrink as the
+program runs.
+
+### Vectors
+
+```rs
+// Create a vector
+let mut v: Vec<i32> = Vec::new();
+let v2 = vec![1, 2, 3];
+
+// Updating a vector
+v.push(5);
+v.push(6);
+v.push(7);
+
+// Reading elements
+let v = vec![1, 2, 3, 4, 5];
+
+let third: &i32 = &v[2];
+println!("The third element is {third}");
+
+let third: Option<&i32> = v.get(2);
+match third {
+    Some(third) => println!("The third element is {third}"),
+    None => println!("There is no third element."),
+}
+```
+
+- Store more than one value in a single data structure that puts all the values next to each other
+  in memory.
+- Can only store values of the same type.
+
+### String Type
+
+```rs
+let s = String::from("hello, world");
+```
+
+- String type is mutable.
+
