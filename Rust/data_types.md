@@ -44,13 +44,12 @@ let heart_eyed_cat = '😻';
 - Characters are specified with single quotes.
 - `char` type is four bytes in size.
 
-### String literal
+### String slice
 
 ```rs
 let s: &str = "hello, world";
 ```
 
-- String literals are inmutable.
 - String literals are specified with double quotes.
 - Slices are references so they do not have ownership.
 
@@ -290,7 +289,7 @@ fn main() {
 
 ## Collection Type
 
-Collections can contain multiple values, and the data these collections pointsto is stored on the
+Collections can contain multiple values, and the data these collections points to is stored on the
 heap, so the amount of data does not need to be known at compile time and can grow or shrink as the
 program runs.
 
@@ -299,6 +298,7 @@ program runs.
 ```rs
 // Create a vector
 let mut v: Vec<i32> = Vec::new();
+let v3: Vec<i32> = Vec::from([1, 2, 3]);
 let v2 = vec![1, 2, 3];
 
 // Updating a vector
@@ -326,8 +326,59 @@ match third {
 ### String Type
 
 ```rs
+let s = String::new();
 let s = String::from("hello, world");
+
+// Concatenating a string
+let mut s = String::from("foo");
+s.push_str("bar");
+
+// Concatenating a character
+let mut s = String::from("lo");
+s.push('l');
+
+// + Operator
+let s1 = String::from("Hello, ");
+let s2 = String::from("world!");
+let s3 = s1 + &s2; // note s1 has been moved here and can no longer be used
+
+// format! macro
+let s1 = String::from("tic");
+let s2 = String::from("tac");
+let s3 = String::from("toe");
+
+let s = format!("{s1}-{s2}-{s3}");
 ```
 
-- String type is mutable.
+- String type could be mutable.
+
+### Hash maps
+
+```rs
+// Creating a hash map
+use std::collections::HashMap;
+
+let mut scores = HashMap::new();
+
+scores.insert(String::from("Blue"), 10);
+scores.insert(String::from("Yellow"), 50);
+
+// Accessing values
+let score = scores.get(&team_name).copied().unwrap_or(0);
+
+// Iterating
+for (key, value) in &scores {
+    println!("{key}: {value}");
+}
+
+// Overwriting a value
+scores.insert(String::from("Blue"), 10);
+scores.insert(String::from("Blue"), 25);
+
+// Adding value only if a key is not present
+scores.entry(String::from("Yellow")).or_insert(50);
+
+//Updating a vlue based on the old value  
+```
+
 
