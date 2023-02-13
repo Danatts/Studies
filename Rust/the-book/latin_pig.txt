@@ -1,0 +1,9 @@
+fn main() {
+    let foo: String = String::from("Apple");
+    println!("{}", pig_latin(foo));
+}
+
+fn pig_latin(mut bar: String) -> String {
+    bar.push_str("hay");
+    bar
+}
