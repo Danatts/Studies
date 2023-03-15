@@ -7,7 +7,7 @@ let yes: boolean = true;
 let whatever: any = 'Hola'; // 'any' hace que la variable pueda cambiar de tipo
 let vacio: void;
 let indefinido: undefined = undefined;
-let no: null; // Es como si no se declarara ni asignara
+let no: null; // Es como si no se declarara ni asignara pero existe de alguna forma
 
 // TIPOS COMPUESTOS
 
@@ -53,6 +53,33 @@ type Producto = {
 }
 
 /** 
-Según la documentación, la diferencia entre interfaces y tipos es que los primeros son extensibles, mientras que los segundos son fijos.
+* Según la documentación, la diferencia entre interfaces y tipos es que los primeros son extensibles, mientras que los segundos son fijos.
 */
 
+// Funciones
+
+function saludar(persona: string) {
+  console.log(`Hola, ${persona}`);
+}
+
+function despedir(persona?: string) { // Puede recibir o no el parámetro de persona
+  if(persona){
+    console.log(`Adios, ${persona}`);
+  } else {
+    console.log(`Adios`);
+  }
+}
+
+function variosTipos(a: string | number) {
+  if (typeof a === 'string') {
+    console.log('Es un string')
+  } else if (typeof a === 'number'){
+    console.log('Es un number')
+  } else {
+    console.log('No es ni string ni number')
+  }
+}
+
+function ejemploReturn(nombre: string, apellido: string):string {
+  return `${nombre} ${apellido}`
+}
