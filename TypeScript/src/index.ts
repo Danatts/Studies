@@ -1,3 +1,9 @@
+import { Curso } from "./models/Curso";
+import { Estudiante } from "./models/Estudiante";
+import { ITarea, Nivel } from "./models/interfaces/ITareas";
+import { Empleado } from "./models/Persona";
+import { Programar } from "./models/Programar";
+
 // DECLARACIÓN DE VARIABLES
 
 // TIPOS PRIMITIVOS
@@ -83,3 +89,40 @@ function variosTipos(a: string | number) {
 function ejemploReturn(nombre: string, apellido: string):string {
   return `${nombre} ${apellido}`
 }
+
+// Clases y objetos
+
+const cursoTS = new Curso("TypeScript", 15);
+const cursoJS = new Curso("JavaScript", 25);
+
+const listaCursos: Curso[] = [cursoJS, cursoTS];
+
+const martin: Estudiante = new Estudiante("Martin", listaCursos, 101, "Gómez");
+
+console.log(`${martin.nombre} estudia:`);
+martin.cursos.forEach((curso: Curso) => console.log(curso.nombre));
+
+console.log(martin.horasEstudiadas);
+
+// Instancia de un objeto
+
+console.log(martin instanceof Estudiante);
+
+// Herencia y poliformismo
+
+let empleado01 = new Empleado("Martin", "San José", 22, 2000);
+
+// Uso de interfaces
+
+let programar: ITarea = {
+  titulo: 'Programar en TS',
+  completado: false,
+  urgencia: Nivel.Bloqueanta,
+  descripcion: 'Practicar con Katas',
+  resumen() {
+      return `Título: ${this.titulo}`
+  },
+}
+
+let programarTS = new Programar("TypeScript", "Tarea de programación en TS", false, Nivel.Bloqueanta);
+console.log(programarTS.resumen());
