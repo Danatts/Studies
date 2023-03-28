@@ -7,9 +7,9 @@ export enum Nivel {
 }
 
 export interface ITarea {
-  titulo: string,
-  completado: boolean,
-  descripcion: string,
-  urgencia?: Nivel,
-  resumen: () => string,
+  titulo: string
+  completado: boolean
+  descripcion: string
+  urgencia?: Nivel
+  resumen: () => string
 }
