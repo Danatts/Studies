@@ -42,9 +42,9 @@ sistema. Por el contrario, los declarativos se centran en el qué y no en el có
   referentes a un objeto queden "encerrados" dentro de éste y sólo se puede acceder a ellos a
   través de los miembros que la clase proporcione (propiedades y métodos).
 
-  - **Herencia:** En POO cuando una clase hereda de otra obtiene todos los rasgos que tuviese la
+  - **Herencia:** En la POO, cuando una clase hereda de otra, obtiene todos los rasgos que tuviese la
   primera. Dado que una clase es un patrón que define cómo es y cómo se comporta una cierta entidad,
-  una clase que hereda de otra obtiene todos los rasgos de la primera y añade otros nuevos y además
+  una clase que hereda de otra, obtiene todos los rasgos de la primera, añade otros nuevos y, además,
   también puede modificar algunos de los que ha heredado.
 
   - **Polimorfismo:** El concepto de polimorfismo se refiere al hecho de que varios objetos de
