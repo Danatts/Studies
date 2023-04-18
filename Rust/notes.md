@@ -2,32 +2,22 @@
 
 ## Functions
 
-```rs
-fn main () {
-  another_function(5);
-}
-
-fn another_function(x: i32) {
-  println!("The value of x is: {x}");
-}
-```
-
 Function bodies are made up of aseries of statements optionally ending in an expression.
 
 - **Statements** are instructions that perform some action and no not return a value.
 - **Expressions** evaluate to a resultant value. They do not include ending semicolon.
+
+```rs
+fn another_function(x: i32) {
+  println!("The value of x is: {x}");
+}
+```
 
 ### Functions with Return Values
 
 ```rs
 fn five() -> i32 {
   5
-}
-
-fn main() {
-  let x = five();
-
-  println!("The value of x is: {x}");
 }
 ```
 
@@ -72,33 +62,37 @@ The value that have the potential to be results from each arm of the `if` must b
 ### Repeating code with `loop`
 
 ```rs
-loop {
-  let mut guess = String::new();
+fn main() {
+  let mut count = 0u32;
 
-  io::stdin()
-    .read_line(&mut guess)
-    .expect("Failed to read line");
+  println!("Let's count until infinity!");
 
-  let guess: u32 = match guess.trim().parse() {
-    Ok(num) => num,
-      Err(_) => continue,
-  };
+  // Infinite loop
+  loop {
+    count += 1;
 
-  println!("You guessed: {guess}");
+    if count == 3 {
+      println!("three");
 
-  match guess.cmp(&secret_number) {
-    Ordering::Less => println!("Too small!"),
-      Ordering::Greater => println!("Too big!"),
-      Ordering::Equal => {
-        println!("You win!");
-        break;
-      }
+      // Skip the rest of this iteration
+      continue;
+    }
+
+    println!("{}", count);
+
+    if count == 5 {
+      println!("OK, that's enough");
+
+      // Exit this loop
+      break;
+    }
   }
 }
 ```
+
 ### Returning values from loops
 
-To do this, you can add the value you want returned after the `break` expression you use to stop the
+You can add the value you want returned after the `break` expression you use to stop the
 loop. That value will be returned out of the loop so you can use it.
 
 ```rs
@@ -112,8 +106,6 @@ fn main() {
       break counter * 2;
     }
   };
-
-  println!("The result is {result}");
 }
 ```
 
@@ -156,11 +148,8 @@ fn main() {
 
   while number != 0 {
     println!("{number}!");
-
     number -= 1;
   }
-
-  println!("LIFTOFF!!!");
 }
 ```
 
@@ -183,7 +172,6 @@ fn main() {
   for number in (1..4).rev() {
     println!("{number}!");
   }
-  println!("LIFTOFF!!!");
 }
 ```
 
@@ -227,10 +215,7 @@ fn main() {
         println!("The maximum is configured to be {}", max);
     }
 }
-
-
 ```
-
 
 ## Ownership
 

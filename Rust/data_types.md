@@ -18,8 +18,7 @@
 ### Float Type
 
 ```rs
-let x = 2.0; // f64
-let y: f32 = 3.0; // f32
+let x: f32 = 3.0; // f32
 ```
 
 - Defaults type is `f64`.
@@ -27,8 +26,7 @@ let y: f32 = 3.0; // f32
 ### Boolean Type
 
 ```rs
-let x = true;
-let y: bool = false;
+let x: bool = false;
 ```
 
 - Defaults type is `true`.
@@ -36,15 +34,14 @@ let y: bool = false;
 ### Character Type
 
 ```rs
-let c = 'z';
-let z: char = 'ℤ'; // with explicit type annotation
+let c: char = 'ℤ'; // with explicit type annotation
 let heart_eyed_cat = '😻';
 ```
 
 - Characters are specified with single quotes.
 - `char` type is four bytes in size.
 
-### String slice
+### String Slice
 
 ```rs
 let s: &str = "hello, world";
@@ -68,27 +65,6 @@ let (x, y, z) = tup; // x = 500, y = 6.4, z = 1
 
 // Accesing a tuple element
 let five_hundred = tup.0;
-
-let six_point_four = tup.1;
-
-let one = x.2;
-```
-
-### Array Type
-
-- Every element of an array must have the same type.
-- Array have fixed length.
-- Arrays are useful when you want your data allocated on the stack rather than the heap.
-
-```rs
-let arr: [i32; 5] = [1, 2, 3, 4, 5];
-
-// Same value for each element
-let arr2 = [3u32; 5];
-
-// Accesing an array element
-let first = arr[0];
-let secong = arr[1];
 ```
 
 ### Structs
@@ -114,7 +90,7 @@ let mut user1 = User {
   sign_in_count: 1,
 };
 
-// Access and modification of a data
+// Access and modification of data
 user1.email = String::from("anotheremail@example.com");
 
 // Returning an instance from a function
@@ -165,7 +141,6 @@ fn main() {
 *Methods* are like functions but inside a struct.
 
 ```rs
-#[derive(Debug)]
 struct Rectangle {
     width: u32,
     height: u32,
@@ -193,7 +168,6 @@ fn main() {
 #### Associated functions without `self`
 
 ```rs
-#[derive(Debug)]
 struct Rectangle {
     width: u32,
     height: u32,
@@ -265,6 +239,8 @@ m.call();
 
 ## Option<T>
 
+- The `Option` type encodes the scenario in which a value could be something or it could be nothing.
+
 ```rs
 enum Option<T> {
     None,
@@ -293,7 +269,28 @@ Collections can contain multiple values, and the data these collections points t
 heap, so the amount of data does not need to be known at compile time and can grow or shrink as the
 program runs.
 
+### Array Type
+
+- Every element of an array must have the same type.
+- Array have fixed length.
+- Arrays are useful when you want your data allocated on the stack rather than the heap.
+
+```rs
+let arr: [i32; 5] = [1, 2, 3, 4, 5];
+
+// Same value for each element
+let arr2 = [3u32; 5];
+
+// Accesing an array element
+let first = arr[0];
+```
+
 ### Vectors
+
+- Store more than one value in a single data structure that puts all the values next to each other
+  in memory.
+- Can only store values of the same type.
+- Unlike arrays, vectors can grow and shrink in size.
 
 ```rs
 // Create a vector
@@ -303,14 +300,12 @@ let v2 = vec![1, 2, 3];
 
 // Updating a vector
 v.push(5);
-v.push(6);
-v.push(7);
+v.pop();
 
 // Reading elements
 let v = vec![1, 2, 3, 4, 5];
 
 let third: &i32 = &v[2];
-println!("The third element is {third}");
 
 let third: Option<&i32> = v.get(2);
 match third {
@@ -319,11 +314,9 @@ match third {
 }
 ```
 
-- Store more than one value in a single data structure that puts all the values next to each other
-  in memory.
-- Can only store values of the same type.
-
 ### String Type
+
+- String type could be mutable.
 
 ```rs
 let s = String::new();
@@ -349,8 +342,6 @@ let s3 = String::from("toe");
 
 let s = format!("{s1}-{s2}-{s3}");
 ```
-
-- String type could be mutable.
 
 ### Hash maps
 
@@ -378,7 +369,20 @@ scores.insert(String::from("Blue"), 25);
 // Adding value only if a key is not present
 scores.entry(String::from("Yellow")).or_insert(50);
 
-//Updating a vlue based on the old value  
+//Updating a value based on the old value  
+let text = "hello world wonderful world";
+
+let mut map = HashMap::new();
+
+for word in text.split_whitespace() {
+    let count = map.entry(word).or_insert(0);
+    *count += 1;
+}
 ```
+
+- For types that implement the `Copy` trait, like `i32`, the values are copied into the hash map.
+For owned values like `String`, the values will be moved and the hash map will be the owner of
+those values
+- Each unique key can only have one value associated with it at a time.
 
 
