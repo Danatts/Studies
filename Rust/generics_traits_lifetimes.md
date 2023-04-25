@@ -136,6 +136,12 @@ pub fn notify<T: Summary>(item: &T) {
     println!("Breaking news! {}", item.summarize());
 }
 ```
+
+We can have two parameters that implement the same Trait
+```rs
+pub fn notify(item1: &impl Summary, item2: &impl Summary) {
+```
+
 If we want to force both parameters to have the same type, however, we must use a trait bound,
 like this:
 
