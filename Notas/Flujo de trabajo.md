@@ -9,7 +9,7 @@
 7. SPRINT REVIEW: Se hace un repaso del sprint y se presentan los resultados conseguidos.
 8. RETROSPECTIVE: Se evalúa el flujo de trabajo del sprint.
 
-![](./assets/flujo_trabajo01.jpeg)
+![](./assets/flujo_trabajo01.png)
 
 ## FLUJOS DE TRABAJO CON GIT
 
