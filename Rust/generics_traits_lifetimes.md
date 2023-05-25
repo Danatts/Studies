@@ -9,6 +9,21 @@ fn foo<T>(param: T) -> T {
     // function body
 }
 ```
+
+### Enum
+
+```rs
+enum Option<T> {
+    Some(T),
+    None,
+}
+
+enum Result<T, E> {
+    Ok(T),
+    Err(E),
+}
+```
+
 ### Struct
 
 ```rs
@@ -193,3 +208,8 @@ fn returns_summarizable() -> impl Summary {
 ```
 
 - You can only use `impl Trait` if you are returning a single type.
+
+## Lifetimes
+
+Lifetimes are another kind of generic. Rather than ensuring that a type has the behavior we want,
+lifetimes ensure that references are valid as long as we need them to be.
