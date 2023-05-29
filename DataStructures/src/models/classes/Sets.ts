@@ -7,6 +7,12 @@ export default class Set<T> implements ISets<T>{
 		this._items = [];
 	}
 
+	static from<T>(array: T[]): Set<T> {
+		let set = new Set<T>();
+		array.forEach(e => set.add(e));
+		return set
+	}
+
 	add(element: T): boolean {
 		if (this._items.includes(element)) return false
 		this._items.push(element);
@@ -20,7 +26,7 @@ export default class Set<T> implements ISets<T>{
 	}
 
 	has(element: T): boolean {
-		return this._items.includes(element);
+		return this._items.includes(element)
 	}
 
 	clear(): void {
@@ -33,5 +39,23 @@ export default class Set<T> implements ISets<T>{
 
 	values(): T[] {
 		return [...this._items]
+	}
+
+	union(set: Set<T>): Set<T> {
+		let unionSet = Set.from([...this._items]);
+		set.values().forEach(e => unionSet.add(e));
+		return unionSet	
+	}
+
+	intersection(set: Set<T>): Set<T> {
+		return Set.from(this._items.filter(e => set.has(e)))
+	}
+
+	difference(set: Set<T>): Set<T> {
+		return Set.from(this._items.filter(e => !set.has(e)))
+	}
+
+	subset(set: Set<T>): boolean {
+		return this._items.every(e => set.has(e))
 	}
 }
