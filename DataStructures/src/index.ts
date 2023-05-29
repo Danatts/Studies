@@ -1,10 +1,17 @@
-import LinkedList from "./models/classes/LinkedList";
+import Set from "./models/classes/Sets";
 
-let list = new LinkedList();
+const foo = new Set<number>();
 
-list.append(6)
-list.append(8)
-list.append(10)
-list.append(12)
-console.log(list.head?.next?.next?.next?.next)
-console.log(list.toString())
+foo.add(5)
+foo.add(7)
+foo.add(9)
+foo.add(11)
+console.log(foo.values())
+console.log(foo.has(9))
+console.log(foo.has(10))
+foo.delete(9)
+console.log(foo.values())
+console.log(foo.size())
+foo.clear()
+console.log(foo.values())
+console.log(foo.size())
