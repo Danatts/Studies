@@ -1,17 +1,28 @@
-import Set from "./models/classes/Sets";
+import Dictionary from "./models/classes/Dictionary";
 
-const foo = new Set<number>();
-const bar = new Set<number>();
+let foo = new Dictionary<string>();
 
-foo.add(5)
-foo.add(7)
-foo.add(8)
+foo.set("Daniel", "Bogota")
+foo.set("Claudia", "Ibague")
+foo.set("Berenice", "Barcelona")
+foo.set("Mary", "USA")
+foo.set("Paula", "Argentina")
 
-bar.add(5)
-bar.add(6)
-bar.add(7)
-bar.add(9)
-bar.add(12)
+console.log(foo.items);
 
-console.log(foo.subset(bar))
+foo.delete("Mary")
+
+console.log(foo.items);
+
+console.log(foo.get("Daniel"))
+
+console.log(foo.has("Paula"));
+console.log(foo.has("Alfonso"));
+console.log(foo.values())
+console.log(foo.keys())
+console.log(foo.size())
+
+foo.clear()
+
+console.log(foo.items);
 
