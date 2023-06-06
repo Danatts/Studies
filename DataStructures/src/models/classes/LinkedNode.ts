@@ -1,6 +1,6 @@
-import INode from "../interfaces/INode";
+import ILinkedNode from "../interfaces/INode";
 
-export default class Node<T> implements INode<T>{
+export default class Node<T> implements ILinkedNode<T>{
 	element: T;
 	previous: Node<T> | null = null;
 	next: Node<T> | null = null;

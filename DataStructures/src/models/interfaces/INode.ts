@@ -1,6 +1,6 @@
-import Node from "../classes/Node";
+import Node from "../classes/LinkedNode";
 
-export default interface INode<T>{
+export default interface ILinkedNode<T>{
 	element: T;
 	previous?: Node<T> | null
 	next: Node<T> | null
