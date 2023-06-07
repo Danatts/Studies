@@ -1,4 +1,4 @@
-import ILinkedNode from "../interfaces/INode";
+import ILinkedNode from "../interfaces/ILinkedNode";
 
 export default class Node<T> implements ILinkedNode<T>{
 	element: T;
