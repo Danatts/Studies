@@ -1,6 +1,4 @@
-import IStack from "../interfaces/IStack";
-
-export default class Stack<T> implements IStack<T>  {
+export default class Stack<T> {
 	private items: T[]
 
 	constructor() {

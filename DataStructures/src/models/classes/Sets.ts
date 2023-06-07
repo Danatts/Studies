@@ -1,6 +1,4 @@
-import ISets from "../interfaces/ISets";
-
-export default class Set<T> implements ISets<T>{
+export default class Set<T> {
 	private _items: T[];
 
 	constructor() {
@@ -44,7 +42,7 @@ export default class Set<T> implements ISets<T>{
 	union(set: Set<T>): Set<T> {
 		let unionSet = Set.from([...this._items]);
 		set.values().forEach(e => unionSet.add(e));
-		return unionSet	
+		return unionSet
 	}
 
 	intersection(set: Set<T>): Set<T> {

@@ -1,7 +1,5 @@
-import IHashTable from "../interfaces/IHashTable";
-
-export default class HashTable<V> implements IHashTable<V> {
-	private _table: (V|undefined)[];
+export default class HashTable<V> {
+	private _table: (V | undefined)[];
 
 	private loseloseHashCode(key: string): number {
 		let hash = 0;
@@ -9,8 +7,8 @@ export default class HashTable<V> implements IHashTable<V> {
 		return hash % 37;
 	}
 
-	constructor(){
-		this._table = [];	
+	constructor() {
+		this._table = [];
 	}
 
 	put(key: string, value: V): void {

@@ -1,7 +1,6 @@
-import IBinarySearch from "../interfaces/IBinarySearch";
 import TreeNode from "./TreeNode";
 
-export default class BinarySearch<T> implements IBinarySearch<T> {
+export default class BinarySearch<T> {
 	private root: TreeNode<T> | null;;
 
 	private insertNode(node: TreeNode<T>, newNode: TreeNode<T>): void {

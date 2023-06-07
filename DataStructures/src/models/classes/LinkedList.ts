@@ -1,7 +1,6 @@
-import ILinkedList from "../interfaces/ILinkedList";
-import Node from "./Node";
+import Node from "./LinkedNode";
 
-export class LinkedList<T> implements ILinkedList<T> {
+export class LinkedList<T> {
 	private _head: Node<T> | null = null;
 	private length: number = 0;
 
@@ -105,7 +104,7 @@ export class LinkedList<T> implements ILinkedList<T> {
 	}
 }
 
-export class DoublyLinkedList<T> implements ILinkedList<T> {
+export class DoublyLinkedList<T> {
 	private _head: Node<T> | null = null;
 	private _tail: Node<T> | null = null;
 	private _length: number = 0;

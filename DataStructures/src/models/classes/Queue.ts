@@ -1,8 +1,6 @@
-import IQueue from "../interfaces/IQueue";
-
-export default class Queue<T> implements IQueue<T>{
+export default class Queue<T> {
 	private items: T[];
-	
+
 	constructor() {
 		this.items = [];
 	}

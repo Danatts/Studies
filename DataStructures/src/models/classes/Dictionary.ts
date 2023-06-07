@@ -1,6 +1,4 @@
-import IDictionary from "../interfaces/IDictionary";
-
-export default class Dictionary<V> implements IDictionary<V> {
+export default class Dictionary<V> {
 	private _items: { [key: string]: V };
 
 	constructor() {
