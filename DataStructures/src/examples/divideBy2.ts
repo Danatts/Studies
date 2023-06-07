@@ -1,4 +1,4 @@
-import Stack from "./models/classes/Stack";
+import Stack from "../models/Stack";
 
 function divideBy2(decNumber: number): string {
 	let remStack = new Stack<number>();

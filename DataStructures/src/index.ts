@@ -1,25 +1,20 @@
-import BinarySearch from "./models/classes/BinarySearch";
+import BinarySearchTree from "./models/BinarySearchTree";
 
-let tree = new BinarySearch<number>();
+let foo = new BinarySearchTree<number>();
 
-tree.insert(11)
-tree.insert(7)
-tree.insert(15)
-tree.insert(5)
-tree.insert(3)
-tree.insert(9)
-tree.insert(8)
-tree.insert(10)
-tree.insert(13)
-tree.insert(12)
-tree.insert(14)
-tree.insert(20)
-tree.insert(18)
-tree.insert(25)
-tree.insert(6)
-
-console.log(tree.min())
-console.log(tree.max())
-console.log(tree.search(14))
-console.log(tree.search(4))
-
+foo.insert(11);
+foo.insert(15);
+foo.insert(7);
+foo.insert(5);
+foo.insert(3);
+foo.insert(9);
+foo.insert(8);
+foo.insert(10);
+foo.insert(13);
+foo.insert(12);
+foo.insert(14);
+foo.insert(20);
+foo.insert(18);
+foo.insert(25);
+foo.insert(6);
+foo.postOrderTraverse((e: number) => console.log(e))

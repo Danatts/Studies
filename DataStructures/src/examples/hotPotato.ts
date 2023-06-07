@@ -1,4 +1,4 @@
-import Queue from "./models/classes/Queue";
+import Queue from "../models/Queue";
 
 function hotPotato(nameList: string[], num: number): string | undefined {
 	let queue = new Queue<string | undefined>();
