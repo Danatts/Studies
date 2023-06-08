@@ -87,3 +87,48 @@
 - jener (aquel)
 - derjenige (aquel)
 - derselbe (el mismo)
+
+Estos pronombres se declinan en género, número y caso del sustantivo al que hacen referencia.
+
+### Der, Die, Das
+
+|               | Nominativ | Akkusativ | Dativ      | Gentiv    |
+| ------------- | --------- | --------- | ---------- | --------- |
+| **Maskulin**  | der       | den       | dem        | dessen    |
+| **Feminin**   | die       | die       | der        | deren     |
+| **Neutrum**   | das       | das       | dem        | dennen    |
+| **Plural**    | die       | die       | denen      | deren     |
+
+### Der, Dieser, Jener
+
+|               | Nominativ | Akkusativ | Dativ      | Gentiv    |
+| ------------- | --------- | --------- | ---------- | --------- |
+| **Maskulin**  | dieser    | diesen    | diesem     | dieses    |
+| **Feminin**   | diese     | diese     | dieser     | dieser    |
+| **Neutrum**   | dieses    | dieses    | diesem     | dieses    |
+| **Plural**    | diese     | diese     | diesen     | dieser    |
+
+### Derjenige, Derselbe
+
+|               | Nominativ | Akkusativ | Dativ      | Gentiv    |
+| ------------- | --------- | --------- | ---------- | --------- |
+| **Maskulin**  | dersolbe  | denselben | demselben  | desselben |
+| **Feminin**   | dieselbe  | dieselbe  | derselben  | derselben |
+| **Neutrum**   | dasselbe  | dasselbe  | demselben  | desselben |
+| **Plural**    | dieselben | dieselben | desselben  | derselben |
+
+## Indefinidos
+
+- alle (todo)
+- andere (otro)
+- beide (ambos)
+- einige (alguno)
+- ein bisschen (un poco)
+- ein paar (un par de, unos pocos)
+- jeder (cada)
+- jemand (alguien)
+- kein (ningún)
+- man (se)
+- mancher (alguno)
+- mehrere (varios)
+- niemand (nadie)
