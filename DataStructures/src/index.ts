@@ -1,20 +1,21 @@
-import BinarySearchTree from "./models/BinarySearchTree";
+import Graph from "./models/Graph"
 
-let foo = new BinarySearchTree<number>();
+let graph = new Graph<string>()
 
-foo.insert(11);
-foo.insert(15);
-foo.insert(7);
-foo.insert(5);
-foo.insert(3);
-foo.insert(9);
-foo.insert(8);
-foo.insert(10);
-foo.insert(13);
-foo.insert(12);
-foo.insert(14);
-foo.insert(20);
-foo.insert(18);
-foo.insert(25);
-foo.insert(6);
-foo.postOrderTraverse((e: number) => console.log(e))
+let myVert = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
+for (let i = 0; i < myVert.length; i++) {
+	graph.addVertex(myVert[i])	
+}
+
+graph.addEdge('A', 'B')
+graph.addEdge('A', 'C')
+graph.addEdge('A', 'D')
+graph.addEdge('C', 'D')
+graph.addEdge('C', 'G')
+graph.addEdge('D', 'G')
+graph.addEdge('D', 'H')
+graph.addEdge('B', 'E')
+graph.addEdge('B', 'F')
+graph.addEdge('E', 'I')
+
+console.log(graph.toString())
