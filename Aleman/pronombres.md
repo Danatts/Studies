@@ -14,8 +14,8 @@
 | sie       | sie       | ihnen      | ihrer     |
 | Sie       | Sie       | Ihnen      | Ihrer     |
 
-- ==Ich== singe ein Lied für ==dich==.
-- ==Ich== habe ==dir== eine Email geschickt.
+> ==Ich== singe ein Lied für ==dich==.
+> ==Ich== habe ==dir== eine Email geschickt.
 
 ## Pronombres reflexivos
 
@@ -31,7 +31,7 @@
 | sie       | sich      | sich       |
 | Sie       | Sich      | Sich       |
 
-- Ich erinnere ==mich== nicht.
+> Ich erinnere ==mich== nicht.
 
 ## Pronombres posesivos
 
@@ -56,7 +56,7 @@
 | **Neutrum**   | mein      | mein      | meinem     | meines    |
 | **Plural**    | meine     | meine     | meinen     | meiner    |
 
-- ==Mein== Name ist Helmut.
+> ==Mein== Name ist Helmut.
 
 ### No atributiva sin artículo
 
@@ -67,7 +67,7 @@
 | **Neutrum**   | meines    |
 | **Plural**    | meine     |
 
-- Der Kuli ist ==meiner==.
+> Der Kuli ist ==meiner==.
 
 ### No atributiva sin artículo
 
