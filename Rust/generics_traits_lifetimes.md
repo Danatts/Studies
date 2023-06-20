@@ -213,3 +213,41 @@ fn returns_summarizable() -> impl Summary {
 
 Lifetimes are another kind of generic. Rather than ensuring that a type has the behavior we want,
 lifetimes ensure that references are valid as long as we need them to be.
+
+```rs
+&i32 // a reference
+&'a i32'// a reference with an explicit lifetime
+&'a mut i32' // a mutalbe reference with an explicit lifetime
+```
+
+### Lifetime Annotations in Function Signatures
+
+```rs
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
+}
+```
+
+We want the signature to express the following constraint: the returned reference will be valid as
+long as both the parameters are valid. This is the relationship between lifetimes of the parameters
+and the return value. 
+
+### Lifetime Annotations in Struct Definitions
+
+```rs
+struct ImportantExcerpt<'a> {
+    part: &'a str,
+}
+
+fn main() {
+    let novel = String::from("Call me Ishmael. Some years ago...");
+    let first_sentence = novel.split('.').next().expect("Could not find a '.'");
+    let i = ImportantExcerpt {
+        part: first_sentence,
+    };
+}
+```
