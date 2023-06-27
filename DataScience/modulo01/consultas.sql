@@ -54,3 +54,48 @@ FROM actor;
 SELECT DISTINCT(A.last_update), B.last_update
 FROM actor as A
 JOIN film as B;
+# Número de películas de cada rating
+SELECT rating, COUNT(film_id) FROM film GROUP BY rating;
+# Mostrar los 10 actores que más películas han hecho
+SELECT CONCAT(A.first_name, ' ', A.last_name) as "actor", COUNT(film_id) as "# films" 
+FROM film_actor as F 
+RIGHT JOIN actor as A ON F.actor_id = A.actor_id
+GROUP BY actor
+ORDER BY COUNT(film_id) DESC
+LIMIT 10;
+# Mostrar los 5 actores que menos películas han hecho
+SELECT CONCAT(A.first_name, ' ', A.last_name) as "actor", COUNT(film_id) as "# films" 
+FROM actor as A 
+RIGHT JOIN film_actor as F ON A.actor_id = F.actor_id
+GROUP BY actor
+ORDER BY COUNT(film_id) DESC
+LIMIT 10;
+# Mostrar los 5 actores que menos películas han hecho
+SELECT CONCAT(A.first_name, ' ', A.last_name) as "actor", COUNT(film_id) as "# films" 
+FROM actor as A 
+RIGHT JOIN film_actor as F ON A.actor_id = F.actor_id
+GROUP BY actor
+ORDER BY COUNT(film_id) ASC
+LIMIT 5;
+# Películas de la categoría "Action"
+SELECT F.title, C.name
+FROM film as F
+RIGHT JOIN film_category as FC ON F.film_id = FC.film_id
+RIGHT JOIN category as C on FC.category_id = C.category_id
+WHERE C.name = "Action";
+# Clientes de Argentina
+SELECT CONCAT(first_name, " ", last_name) AS customer, city, country
+FROM customer as CU
+RIGHT JOIN address as AD ON CU.address_id = AD.address_id
+RIGHT JOIN city AS CT ON AD.city_id = CT.city_id
+RIGHT JOIN country AS CO ON CT.country_id = CO.country_id
+WHERE country = "Argentina";
+# Clientes que hayan alquilado películas de la categoría "Action"
+SELECT CONCAT(first_name, " ", last_name) AS customer, FI.title, CA.name
+FROM customer as CU
+INNER JOIN rental as RE ON CU.customer_id = RE.customer_id
+INNER JOIN inventory as IV ON RE.inventory_id = IV.inventory_id
+INNER JOIN film as FI ON IV.film_id = FI.film_id
+INNER JOIN film_category as FC ON FI.film_id = FC.film_id
+INNER JOIN category as CA on FC.category_id = CA.category_id
+WHERE CA.name = "Action";
