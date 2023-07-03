@@ -16,7 +16,7 @@ servidores para que se comuniquen mutuamente.
 
 ## HTTP
 
-*Hypertext Transfer Protocol* es un protocolo de la capa de aplicaión creado para la transmisión de
+*Hypertext Transfer Protocol* es un protocolo de la capa de aplicación creado para la transmisión de
 documentos de hipermedia. Fue diseñado para poder comunicar navegadores web y servidores web. HTTP
 sigue el clásico modelo de cliente servidor, con un cliente abriendo la conexión a través de una
 petición y luego esperando hasta que recibe una respuesta por parte del servidor.
@@ -34,7 +34,7 @@ servidor.
 la petición.
 - PATCH: Realiza modificaciones parciales al recurso.
 - DELETE: Elimina el recurso.
-- CONNECT: Establece un tunel de conexión con el servidor. Es usada cuando hay *servidores
+- CONNECT: Establece un túnel de conexión con el servidor. Es usada cuando hay *servidores
 proxy* actuando como intermediarios.
 - OPTIONS: Describe las opciones de comunicación que tiene disponibles el recurso.
 - TRACE: Realiza un llamado en bucle de testeo con el recurso.
