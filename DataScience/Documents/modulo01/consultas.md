@@ -15,12 +15,3 @@ Aplica un cálculo sobre varios valores y retorna un único valor.
 - MIN()
 
 > Todo campo consultado que no use una función de agregación debe añadirse al comando GROUP BY.
-
-## Unión de tablas
-
-### Tipos de `JOIN`
-
-- LEFT JOIN
-- RIGHT JOIN
-- INNER JOIN
-
