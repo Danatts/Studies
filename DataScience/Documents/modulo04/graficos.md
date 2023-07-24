@@ -10,4 +10,3 @@ Cosas que un gráfico debe incluir:
 - Escala correcta
 - Líneas
 
-
