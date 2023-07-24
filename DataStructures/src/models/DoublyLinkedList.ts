@@ -19,7 +19,7 @@ export class DoublyLinkedList<T> extends LinkedList<T> {
 		return this._tail;
 	}
 
-	append(element: T): void {
+	public append(element: T): void {
 		let node = new DoublyNode(element);
 
 		if (this._head == null) {
@@ -33,7 +33,7 @@ export class DoublyLinkedList<T> extends LinkedList<T> {
 		this._length++;
 	}
 
-	insert(index: number, element: T): boolean {
+	public insert(index: number, element: T): boolean {
 		if (index < 0 || index > this._length) return false
 
 		let node = new DoublyNode(element);
@@ -65,7 +65,7 @@ export class DoublyLinkedList<T> extends LinkedList<T> {
 		return true;
 	}
 
-	removeAt(index: number): T | undefined {
+	public removeAt(index: number): T | undefined {
 		if (index < 0 || index >= this._length) return undefined;
 
 		let current = this._head;
@@ -91,13 +91,13 @@ export class DoublyLinkedList<T> extends LinkedList<T> {
 		return current?.element
 	}
 
-	clear(): void {
+	public clear(): void {
 		this._head = undefined;
 		this._tail = undefined;
 		this._length = 0;
 	}
 
-	inverseToString(): string {
+	public inverseToString(): string {
 		let current = this._tail;
 		let string: string = '';
 

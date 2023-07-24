@@ -5,31 +5,31 @@ export default class Queue<T> {
 		this._items = [];
 	}
 
-	enqueue(element: T): void {
+	public enqueue(element: T): void {
 		this._items.push(element);
 	}
 
-	dequeue(): T | undefined {
+	public dequeue(): T | undefined {
 		return this._items.shift();
 	}
 
-	front(): T | undefined {
+	public front(): T | undefined {
 		return this._items[0];
 	}
 
-	isEmpty(): boolean {
+	public isEmpty(): boolean {
 		return this._items.length === 0;
 	}
 
-	clear(): void {
+	public clear(): void {
 		this._items = [];
 	}
 
-	size(): number {
+	public size(): number {
 		return this._items.length;
 	}
 
-	print(): void {
+	public print(): void {
 		console.log(this._items.toString());
 	}
 }

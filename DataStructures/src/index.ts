@@ -10,5 +10,3 @@ function createNonSortedArray(size: number) {
 
 let array = createNonSortedArray(8);
 console.log(array.toString());
-array.mergeSort();
-console.log(array.toString());

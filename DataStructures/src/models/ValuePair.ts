@@ -7,7 +7,7 @@ export default class ValuePair<K, V> {
 		this.value = value;
 	}
 
-	toString(): string {
+	public toString(): string {
 		return `${this.key}: ${this.value}`;
 	}
 }

@@ -13,7 +13,7 @@ export default class LinkedList<T> {
 		return this._head
 	}
 
-	getElementAt(index: number): LinkedNode<T> | undefined {
+	public getElementAt(index: number): LinkedNode<T> | undefined {
 		if (index < 0 || index > this._length) return undefined;
 
 		let node = this._head;
@@ -24,7 +24,7 @@ export default class LinkedList<T> {
 		return node;
 	}
 
-	append(element: T): void {
+	public append(element: T): void {
 		let node = new LinkedNode(element);
 		let current;
 
@@ -40,7 +40,7 @@ export default class LinkedList<T> {
 		this._length++;
 	}
 
-	insert(index: number, element: T): boolean {
+	public insert(index: number, element: T): boolean {
 		if (index < 0 || index > this._length) return false;
 
 		let node = new LinkedNode(element);
@@ -57,7 +57,7 @@ export default class LinkedList<T> {
 		return true;
 	}
 
-	removeAt(index: number): T | undefined {
+	public removeAt(index: number): T | undefined {
 		if (index < 0 || index >= this._length) return undefined;
 
 		let current = this._head;
@@ -73,11 +73,11 @@ export default class LinkedList<T> {
 		return current?.element;
 	}
 
-	remove(element: T): T | undefined {
+	public remove(element: T): T | undefined {
 		return this.removeAt(this.indexOf(element));
 	}
 
-	indexOf(element: T): number {
+	public indexOf(element: T): number {
 		let current = this._head;
 		let index = 0;
 
@@ -91,20 +91,20 @@ export default class LinkedList<T> {
 		return -1;
 	}
 
-	isEmpty(): boolean {
+	public isEmpty(): boolean {
 		return this._length === 0;
 	}
 
-	size(): number {
+	public size(): number {
 		return this._length;
 	}
 
-	clear(): void {
+	public clear(): void {
 		this._head = undefined;
 		this._length = 0;
 	}
 
-	toString(): string {
+	public toString(): string {
 		let current = this._head;
 		let string: string = '';
 

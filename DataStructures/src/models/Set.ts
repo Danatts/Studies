@@ -11,49 +11,49 @@ export default class Set<T> {
 		return set;
 	}
 
-	add(element: T): boolean {
+	public add(element: T): boolean {
 		if (this._items.includes(element)) return false;
 		this._items.push(element);
 		return true;
 	}
 
-	delete(element: T): boolean {
+	public delete(element: T): boolean {
 		if (!this._items.includes(element)) return false;
 		this._items.splice(this._items.indexOf(element), 1);
 		return true
 	}
 
-	has(element: T): boolean {
+	public has(element: T): boolean {
 		return this._items.includes(element);
 	}
 
-	clear(): void {
+	public clear(): void {
 		this._items = [];
 	}
 
-	size(): number {
+	public size(): number {
 		return this._items.length;
 	}
 
-	values(): T[] {
+	public values(): T[] {
 		return [...this._items];
 	}
 
-	union(set: Set<T>): Set<T> {
+	public union(set: Set<T>): Set<T> {
 		let unionSet = Set.from([...this._items]);
 		set.values().forEach(e => unionSet.add(e));
 		return unionSet;
 	}
 
-	intersection(set: Set<T>): Set<T> {
+	public intersection(set: Set<T>): Set<T> {
 		return Set.from(this._items.filter(e => set.has(e)));
 	}
 
-	difference(set: Set<T>): Set<T> {
+	public difference(set: Set<T>): Set<T> {
 		return Set.from(this._items.filter(e => !set.has(e)));
 	}
 
-	subset(set: Set<T>): boolean {
+	public subset(set: Set<T>): boolean {
 		return this._items.every(e => set.has(e));
 	}
 }

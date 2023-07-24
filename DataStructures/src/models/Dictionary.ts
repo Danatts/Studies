@@ -20,21 +20,21 @@ export default class Dictionary<K, V> {
 		return Object.values(this._table);
 	}
 
-	set(key: K, value: V): boolean {
+	public set(key: K, value: V): boolean {
 		if (key == null || value == null) return false;
 		this._table[this.toStrFn(key)] = new ValuePair(key, value);
 		return true;
 	}
 
-	get(key: K): V | undefined {
+	public get(key: K): V | undefined {
 		return this._table[this.toStrFn(key)].value;
 	}
 
-	has(key: K): boolean {
+	public has(key: K): boolean {
 		return this._table[this.toStrFn(key)] != null;
 	}
 
-	delete(key: K): boolean {
+	public delete(key: K): boolean {
 		if (this.has(key)) {
 			delete this._table[this.toStrFn(key)];
 			return true;
@@ -42,27 +42,27 @@ export default class Dictionary<K, V> {
 		return false;
 	}
 
-	values(): V[] {
+	public values(): V[] {
 		return this.keyValues().map(valuePair => valuePair.value);
 	}
 
-	keys(): K[] {
+	public keys(): K[] {
 		return this.keyValues().map(valuePair => valuePair.key);
 	}
 
-	isEmpty(): boolean {
+	public isEmpty(): boolean {
 		return this.size() === 0;
 	}
 
-	size(): number {
+	public size(): number {
 		return Object.keys(this._table).length;
 	}
 
-	clear(): void {
+	public clear(): void {
 		this._table = {};
 	}
 
-	toString(): string {
+	public toString(): string {
 		if (this.isEmpty()) return '';
 
 		let valuePairs = this.keyValues();

@@ -27,7 +27,7 @@ export default class BinarySearchTree<T> {
 		}
 	}
 
-	insert(key: T): void {
+	public insert(key: T): void {
 		if (this._root == null) {
 			this._root = new TreeNode(key);
 		} else {
@@ -46,7 +46,7 @@ export default class BinarySearchTree<T> {
 		}
 	}
 
-	search(key: T): boolean {
+	public search(key: T): boolean {
 		return this.searchNode(this._root, key);
 	}
 
@@ -58,7 +58,7 @@ export default class BinarySearchTree<T> {
 		}
 	}
 
-	inOrderTraverse(callback: Function): void {
+	public inOrderTraverse(callback: Function): void {
 		this.inOrderTraverseNode(this._root, callback);
 	}
 
@@ -70,7 +70,7 @@ export default class BinarySearchTree<T> {
 		}
 	}
 
-	preOrderTraverse(callback: Function): void {
+	public preOrderTraverse(callback: Function): void {
 		this.preOrderTraverseNode(this._root, callback);
 	}
 
@@ -82,7 +82,7 @@ export default class BinarySearchTree<T> {
 		}
 	}
 
-	postOrderTraverse(callback: Function): void {
+	public postOrderTraverse(callback: Function): void {
 		this.postOrderTraverseNode(this._root, callback);
 	}
 
@@ -96,7 +96,7 @@ export default class BinarySearchTree<T> {
 		return undefined;
 	}
 
-	min(): T | undefined {
+	public min(): T | undefined {
 		return this.minNode(this._root);
 	}
 
@@ -110,7 +110,7 @@ export default class BinarySearchTree<T> {
 		return undefined;
 	}
 
-	max(): T | undefined {
+	public max(): T | undefined {
 		return this.maxNode(this._root);
 	}
 
@@ -151,7 +151,7 @@ export default class BinarySearchTree<T> {
 		}
 	}
 
-	remove(key: T): void {
+	public remove(key: T): void {
 		this._root = this.removeNode(this._root, key);
 	}
 }

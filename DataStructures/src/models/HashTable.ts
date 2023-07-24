@@ -23,36 +23,36 @@ export default class HashTable<K, V> {
 		return defaultToString(key);
 	}
 
-	put(key: K, value: V): boolean {
+	public put(key: K, value: V): boolean {
 		if (key == null || value == null) return false;
 		let index = this.loseloseHashCode(key);
 		this._table[index] = new ValuePair(key, value);
 		return true;
 	}
 
-	get(key: K): V | undefined {
+	public get(key: K): V | undefined {
 		return this._table[this.loseloseHashCode(key)].value;
 	}
 
-	remove(key: K): boolean {
+	public remove(key: K): boolean {
 		if (key == null ) return false;
 		delete this._table[this.loseloseHashCode(key)];
 		return true;
 	}
 
-	isEmpty(): boolean {
+	public isEmpty(): boolean {
 		return this.size() === 0;
 	}
 
-	size(): number {
+	public size(): number {
 		return Object.keys(this._table).length;
 	}
 
-	clear(): void {
+	public clear(): void {
 		this._table = {};
 	}
 
-	toString(): string {
+	public toString(): string {
 		if (this.isEmpty()) return '';
 
 		let keys = Object.keys(this._table);
