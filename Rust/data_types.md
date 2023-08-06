@@ -1,17 +1,17 @@
 # Data Types
 
-## Scalar Types
+## Primitive Types
 
 ### Integer Type
 
-| Length | Signed | Unsigned |
-| - | - | - |
-| 8-bit | i8 | u8 |
-| 16-bit | i16 | u16 |
-| 32-bit | i32 | u32 |
-| 64-bit | i64 | u64 |
-| 128-bit | i128 | u128 |
-| arch | isize | usize |
+| Length   | Signed   | Unsigned |
+| -------- | -------- | -------- |
+| 8-bit    | i8       | u8       |
+| 16-bit   | i16      | u16      |
+| 32-bit   | i32      | u32      |
+| 64-bit   | i64      | u64      |
+| 128-bit  | i128     | u128     |
+| arch     | isize    | usize    |
 
 - Defaults types is `i32`.
 
@@ -19,6 +19,7 @@
 
 ```rs
 let x: f32 = 3.0; // f32
+let x: f64 = 3.0; // f32
 ```
 
 - Defaults type is `f64`.
@@ -26,7 +27,8 @@ let x: f32 = 3.0; // f32
 ### Boolean Type
 
 ```rs
-let x: bool = false;
+let x: bool = true;
+let y: bool = false;
 ```
 
 - Defaults type is `true`.
@@ -34,7 +36,8 @@ let x: bool = false;
 ### Character Type
 
 ```rs
-let c: char = 'ℤ'; // with explicit type annotation
+let c: char 'z';
+let z: char = 'ℤ';
 let heart_eyed_cat = '😻';
 ```
 
@@ -44,17 +47,28 @@ let heart_eyed_cat = '😻';
 ### String Slice
 
 ```rs
-let s: &str = "hello, world";
+let s: &'static str = "Hello, world!";
 ```
 
 - String literals are specified with double quotes.
 - Slices are references so they do not have ownership.
 
+A *string slice* is a reference to a part of a `String`.
+
+```rs
+fn main() {
+    let s = String::from("hello world");
+
+    let hello = &s[0..5];
+    let world = &s[6..11];
+}
+```
+
 ## Compound Types
 
 ### Tuple Type
 
-- Groups together a number of values with a variety of types into one compound type.
+- Elements of a tuple can be of different types.
 - Tuples have fixed length.
 
 ```rs
@@ -67,27 +81,43 @@ let (x, y, z) = tup; // x = 500, y = 6.4, z = 1
 let five_hundred = tup.0;
 ```
 
-### Structs
+### Array Type
 
-#### Clasic struct
+- Every element of an array must have the same type.
+- Array have fixed length.
+- Arrays are useful when you want your data allocated on the stack rather than the heap.
+
+```rs
+let arr: [i32; 5] = [1, 2, 3, 4, 5];
+
+// Same value for each element
+let arr2 = [3u32; 5];
+
+// Accesing an array element
+let first = arr[0];
+```
+
+## Structs
+
+### Clasic struct
 
 - The pieces of a struct can be different types.
 - Each piece of data has a name and a value.
 
 ```rs
 struct User {
-  active: bool,
-  username: String,
-  email: String,
-  sign_in_count: u64,
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
 }
 
 // To create an instance
 let mut user1 = User {
-  active: true,
-  username: String::from("someusername123"),
-  email: String::from("someone@example.com"),
-  sign_in_count: 1,
+    active: true,
+    username: String::from("someusername123"),
+    email: String::from("someone@example.com"),
+    sign_in_count: 1,
 };
 
 // Access and modification of data
@@ -105,12 +135,12 @@ fn build_user(email: String, username: String) -> User {
 
 // Struct update syntax
 let user2 = User {
-  email: String::from("another@example.com"),
-  ..user1
+    email: String::from("another@example.com"),
+    ..user1
 };
 ```
 
-#### Tuple struct
+### Tuple struct
 
 - Have the added meaning the struct name provides but do not have names associated with their
   fields.
@@ -126,7 +156,7 @@ fn main() {
 }
 ```
 
-#### Unit-Like struct
+### Unit-Like struct
 
 ```rs
 struct AlwaysEqual;
@@ -136,7 +166,7 @@ fn main() {
 }
 ```
 
-#### Methods
+### Methods
 
 *Methods* are like functions but inside a struct.
 
@@ -165,7 +195,7 @@ fn main() {
 }
 ```
 
-#### Associated functions without `self`
+### Associated functions without `self`
 
 ```rs
 struct Rectangle {
@@ -188,15 +218,15 @@ fn main() {
 }
 ```
 
-### Enums
+## Enums
 
 *Enums* allow to define a type by enumerating its possible variants, they give a way of saying a
 value is one of a possible set of values.
 
 ```rs
 enum IpAddrKind {
-  V4,
-  v6,
+    V4,
+    v6,
 }
 
 let four = IpAddrKind::V4;
@@ -204,8 +234,8 @@ let six = IpAddrKind::V6;
 
 // Attach data to enum variants
 enum IpAddr {
-  V4(u8, u8, u8, u8),
-  V6(String),
+    V4(u8, u8, u8, u8),
+    V6(String),
 }
 
 let home = IpAddr::V4(127, 0, 0, 1);
@@ -224,7 +254,7 @@ enum Message {
 }
 ```
 
-#### Methods
+### Methods
 
 ```rs
 impl Message {
@@ -269,22 +299,6 @@ Collections can contain multiple values, and the data these collections points t
 heap, so the amount of data does not need to be known at compile time and can grow or shrink as the
 program runs.
 
-### Array Type
-
-- Every element of an array must have the same type.
-- Array have fixed length.
-- Arrays are useful when you want your data allocated on the stack rather than the heap.
-
-```rs
-let arr: [i32; 5] = [1, 2, 3, 4, 5];
-
-// Same value for each element
-let arr2 = [3u32; 5];
-
-// Accesing an array element
-let first = arr[0];
-```
-
 ### Vectors
 
 - Store more than one value in a single data structure that puts all the values next to each other
@@ -320,7 +334,7 @@ match third {
 
 ```rs
 let s = String::new();
-let s = String::from("hello, world");
+let s = String::from("hello");
 
 // Concatenating a string
 let mut s = String::from("foo");
@@ -351,8 +365,8 @@ use std::collections::HashMap;
 
 let mut scores = HashMap::new();
 
-scores.insert(String::from("Blue"), 10);
-scores.insert(String::from("Yellow"), 50);
+scores.insert(String::from("blue"), 10);
+scores.insert(String::from("yellow"), 50);
 
 // Accessing values
 let score = scores.get(&team_name).copied().unwrap_or(0);
@@ -363,11 +377,11 @@ for (key, value) in &scores {
 }
 
 // Overwriting a value
-scores.insert(String::from("Blue"), 10);
-scores.insert(String::from("Blue"), 25);
+scores.insert(String::from("blue"), 10);
+scores.insert(String::from("blue"), 25);
 
 // Adding value only if a key is not present
-scores.entry(String::from("Yellow")).or_insert(50);
+scores.entry(String::from("yellow")).or_insert(50);
 
 //Updating a value based on the old value  
 let text = "hello world wonderful world";
@@ -384,5 +398,4 @@ for word in text.split_whitespace() {
 For owned values like `String`, the values will be moved and the hash map will be the owner of
 those values
 - Each unique key can only have one value associated with it at a time.
-
 

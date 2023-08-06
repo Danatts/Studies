@@ -157,6 +157,13 @@ annotate the module with `cfg(test)`.
 The `#[cfg(test)]` annotation on the tests module tells Rust to compile and run the test code only
 when you run `cargo test`.
 
+```rs
+#[cfg(test)]
+mod tests {
+    #[test]
+    // ...
+```
+
 ### Integration Tests
 
 Integration tests are entirely external to your library. They use your library in the same way any
