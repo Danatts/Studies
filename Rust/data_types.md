@@ -95,6 +95,9 @@ let arr2 = [3u32; 5];
 
 // Accesing an array element
 let first = arr[0];
+
+// Updating an array element
+arr[1] = 10;
 ```
 
 ## Structs
@@ -315,6 +318,7 @@ let v2 = vec![1, 2, 3];
 // Updating a vector
 v.push(5);
 v.pop();
+v[2] = 10
 
 // Reading elements
 let v = vec![1, 2, 3, 4, 5];
