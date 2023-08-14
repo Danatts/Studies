@@ -1,4 +1,4 @@
-# Presente Perfecto
+# Presente Perfecto / Pasado Perfecto
 
 > Gestern **haben** wir eine Wanderung **gemacht**
 
@@ -11,11 +11,11 @@ El **presente perfecto** consiste en dos partes:
    en el presente simple.
 
 2. La acción que es descrita en la oración es expresada con el segundo verbo, el cual va al final de
-   la oración. Este verbo se conjuga en pasado participo.
+   la oración. Este verbo se conjuga en pasado participio.
 
-## Verbos regulares en Pasado Participo
+## Verbos regulares en Participio
 
-Con los verbos regulares, el pasado participo usualmente empieza con el prefijo **ge-**, y luego la
+Con los verbos regulares, el pasado participio usualmente empieza con el prefijo **ge-**, y luego la
 raiz del verbo seguida de una **t** al final.
 
 > **ge**-mach-**t**
@@ -33,3 +33,16 @@ Algunos verbos van sin **ge-**
 > fotografier-**t**
 > reservier-**t**
 > besuch-**t**
+
+## Verbos que involucran movimiento
+
+Algunos verbos como **gehen**, **fahren**, **fliegen** o **schwimmen** que expresan un cambio de
+posición: algo moviéndose del punto A al punto B, usan el verbo auxiliar **sein** en el pasado participio. La forma conjugada de **sein** se situa en la segunda posición y el pasado participio va
+al final.
+
+> Ich bin geschwommen
+> Du bist geflogen
+> Sie ist gereist
+> Wir sind gegangen
+
+
