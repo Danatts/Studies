@@ -129,5 +129,52 @@ closure's body handles the values:
 
 ## Iterators
 
-The iterator pattern allows to perform task on a sequence of items i turn.
+The iterator pattern allows to perform task on a sequence of items in turn. An iterator is
+responsible for the logic of iterating over each item and determining when the sequence has
+finished.
 
+```rs
+let v1 = vec![1, 2, 3];
+
+let v1_iter = v1.iter();
+
+for val in v1_iter {
+    println!("Got: {}", val);
+}
+```
+
+### The `Iterator` Trait and the `next` Method
+
+```rs
+pub trait Iterator {
+    type Item;
+
+    fn next(&mut self) -> Option<Self::Item>;
+}
+```
+
+The `Iterator` trait only requires implementors to define one method: `next`, which returns one
+item of the iterator at a time wrapped in `Some` and, when iterator is over, returns `None`.
+
+```rs
+fn iterator_demonstration() {
+    let v1 = vec![1, 2, 3];
+
+    let mut v1_iter = v1.iter();
+
+    assert_eq!(v1_iter.next(), Some(&1));
+    assert_eq!(v1_iter.next(), Some(&2));
+    assert_eq!(v1_iter.next(), Some(&3));
+    assert_eq!(v1_iter.next(), None);
+}
+```
+
+- We need to make iterator mutable beacuse calling the `next` method on a iterator changes internal
+  state the the iterator uses to keep track of where it is in the sequence.
+- We did not need to make iterator mutable when used a `for` loop beacuse the loop took ownership of
+  it and made it mutable behind the scenes.
+- The values that we get form the calls to `next` are *immutable references* to the values in the
+  vector. 
+- If we want to create an iterator that takes ownership and return owned values, we can call
+  `into_iter`.
+- If we want to iterate over mutable references, we call `iter_mut`.
