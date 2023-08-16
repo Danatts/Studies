@@ -126,3 +126,8 @@ closure's body handles the values:
 3. `Fn` applies to closures that do not move captured values out of their body and do not mutate
    captured values, as well as closures that capture nothing from their environment. These closures
    can be called more than once.
+
+## Iterators
+
+The iterator pattern allows to perform task on a sequence of items i turn.
+
