@@ -1,4 +1,4 @@
-# Presente Perfecto / Pasado Perfecto
+# Presente Perfecto
 
 > Gestern **haben** wir eine Wanderung **gemacht**
 
