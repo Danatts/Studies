@@ -9,7 +9,7 @@ implement `Deref` and `Drop` traits. The `Deref` trait allows an instance of the
 struct to behave like a reference, the `Drop` trait allows you to customize the code that is run
 when an instance of the smart pointer goes out of scope.
 
-## Using Box<T> to Point Data on the Heap
+## Box<T>
 
 Boxes allow you to store data on the heap rather than the stack. What remains on the stack is the
 pointer to the heap data.
@@ -23,7 +23,7 @@ You will use them most often in these situations:
 - When you want to own a value and you care only that it is a type that implements a particular
   trait rather than being of a specific time.
 
-## Using a Box<T> to Store Data on the Heap
+### Using a Box<T> to Store Data on the Heap
 
 ```rs
 // How to use a box to store an i32 value on the heap.
@@ -35,7 +35,7 @@ fn main() {
 
 When a box goes out of scope it will be deallocated for both the box and the data it points to.
 
-## Using Box<T> to Get a Recursive Type with a Known Size
+### Using Box<T> to Get a Recursive Type with a Known Size
 
 ```rs
 enum List {
@@ -56,7 +56,7 @@ Implementing the `Deref` trait allows you to customize the behavior of the *defe
 By implementing `Deref` in such a way that a smart pointer can be treated like a regular reference,
 you can write code that operates on references and use that code with smart pointers too.
 
-## Dereference: Following the Pointer to the Value
+### Dereference: Following the Pointer to the Value
 
 ```rs
 fn main() {
@@ -69,7 +69,7 @@ fn main() {
 }
 ```
 
-## Using Box<T> Like a Reference
+### Using Box<T> Like a Reference
 
 ```rs
 fn main() {
@@ -81,7 +81,7 @@ fn main() {
 }
 ```
 
-## Running Code on Cleanup with the `Drop` Trait
+### Running Code on Cleanup with the `Drop` Trait
 
 `Drop` trait lets you customize what happens when a value is about to go out of scope.
 
@@ -107,7 +107,7 @@ fn main() {
 }
 ```
 
-## Dropping a Value Early with std::mem::drop
+### Dropping a Value Early with std::mem::drop
 
 Rust does not allow to explicitly call drop method, it is called automatically when variable is out
 of scope. So if we wanted to force a value to be cleaned early, we use the `std::mem::drop`
@@ -162,7 +162,7 @@ structure to bend Rust's usual rules that govern mutation and borrowing.
 We can use types that use the interior mutability pattern only when we can ensure that the borrowing
 rules will be followed at runtime.
 
-## Enforcing Borrowing Rules at Runtime with `RefCell<T>`
+### Enforcing Borrowing Rules at Runtime with `RefCell<T>`
 
 With references and Box<T>, the borrowing rules' invariants are enforced at compile time. With
 `RefCell<T>`, these invariants are enforced at *runtime*. With `RefCell<T>`, if you break these
