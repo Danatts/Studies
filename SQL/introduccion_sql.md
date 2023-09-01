@@ -76,3 +76,4 @@ sistema.
 
 - SELECT
 
+## Tablas Transacionales vs Tablas Dimensionales
