@@ -187,7 +187,6 @@ To create multiple threads that all send values to the same receiver we can clon
         println!("Got: {}", received);
     }
 
-    // --snip--
 ```
 
 ## Shared Data
@@ -195,7 +194,7 @@ To create multiple threads that all send values to the same receiver we can clon
 Shared memory concurrency allows multiple ownership: multiple threads can access the same memory
 location at the same time.
 
-## Mutexes 
+### Mutexes 
 
 *Mutex* is an abbreviation for *mutual exclusion*, as in, a mutex allows only one thread to access
 some data at any given time. To access the data in a mutex, a thread must first signal that it wants
@@ -228,4 +227,22 @@ block the current thread co it cannot do any work until it is our turn to have t
 
 ### Sharing a `Mutex<T>` between Multiple Threads
 
+### Arc: Safely share ownership of data across threads
 
+Wraps types and allows them to be immutably shared between threads.
+
+```rs
+use std::sync::Arc;
+use std::thread;
+
+fn main() {
+    let data = Arc::new(5);
+    
+    for _ in 0..3 {
+        let data_shared = data.clone();
+        thread::spawn(move || {
+            println!("{:?}", data_shared); 
+        });
+    }
+}
+```
