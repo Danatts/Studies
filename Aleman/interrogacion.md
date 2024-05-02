@@ -8,6 +8,7 @@
 	- Wem (A quién) -> Dativ
 	- Wessen (De quién) -> Genitiv
 - Was (Qué)
+- Was für (Qué clase)
 - Welcher (Cuál o Qué)
 
 |               | Nominativ | Akkusativ | Dativ      | Gentiv    |

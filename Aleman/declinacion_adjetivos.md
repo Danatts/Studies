@@ -9,18 +9,18 @@
 | **Weak inflection**    | e e e n   | n e e n   | n n n n    | n n n n   |
 
 
-- Infleción fuerte: sin artículo:
+- Inflexión fuerte: sin artículo:
 
 > ==Guter Mann==, ==gutes== Kind, ==gute== Frau und ==gute== Menschen.
 
-- Infleción mixta: seguido de un artículo indefinido:
+- Inflexión mixta: seguido de un artículo indefinido:
 
 > Er ist ein ==guter== Mann, es ist ein ==gutes== Kind, sie ist eine ==gute== Frau und sie sind keine ==guten== Menschen.
 
-- Infleción débil: seguido de un artículo:
+- Inflexión débil: seguido de un artículo definido:
 
 > Der ==gute== Mann, das ==gute== Kind, die ==gute== Frau und die ==guten== Menschen.
 
-- Sin infleción: no procede un pronombre:
+- Sin inflexión: no procede un pronombre:
 
 > Der Mann ist ==gut==, das Kind ist ==gut==, die Frau ist ==gut== und die Menschen sind ==gut==.
